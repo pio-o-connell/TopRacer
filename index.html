@@ -6,14 +6,47 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Pair programming</title>
+    <title>Dynamic Country Quiz</title>
 </head>
 <body>
-    <h1 class="heading">
-        <img class="logo" src="assets/images/logo/logo.png" alt="logo">Love Maths
-    </h1>
-  
-   
+     <h1> Top Racer </h1>
+
+     <main class="container">
+         <section id="quiz" class="quiz" aria-live="polite">
+             <header class="quiz__header">
+                 <div class="quiz__row">
+                     <div>
+                         <label for="difficulty">Difficulty</label>
+                         <select id="difficulty" class="quiz__select" aria-label="Select difficulty">
+                             <option value="easy" selected>Easy</option>
+                             <option value="medium">Medium</option>
+                             <option value="hard">Hard</option>
+                         </select>
+                     </div>
+                     <div class="quiz__scoreboard">
+                         <span>Score: <strong id="score">0</strong></span>
+                         <span>Wrong: <strong id="wrong">0</strong></span>
+                         <span>Q: <strong id="progress">1 / 10</strong></span>
+                     </div>
+                 </div>
+             </header>
+
+             <div class="quiz__body">
+                 <h2 id="question" class="quiz__question">Loading question…</h2>
+                 <div id="media" class="quiz__media" aria-hidden="true"></div>
+                 <div id="options" class="quiz__options" role="listbox" aria-label="Answer choices"></div>
+                 <p id="feedback" class="quiz__feedback" aria-live="polite"></p>
+             </div>
+
+             <footer class="quiz__footer">
+                 <button id="next-btn" class="btn btn--primary" type="button" disabled>Next</button>
+                 <button id="restart-btn" class="btn" type="button" hidden>Play again</button>
+             </footer>
+         </section>
+     </main>
+
+    <!-- Load engine first, then UI controller -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/quiz.js"></script>
 </body>
 </html>
